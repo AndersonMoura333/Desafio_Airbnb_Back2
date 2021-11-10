@@ -8,7 +8,6 @@ const port = 1234;
 const server = app.listen(port, () => {
     console.log(`Express rodando na porta ${port}`);
 });
-
 app.get('/', (req, res) => {
     res.json({
         "cep": "01001-000",
