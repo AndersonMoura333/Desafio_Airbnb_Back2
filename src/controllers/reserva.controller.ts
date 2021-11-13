@@ -17,7 +17,6 @@ export async function listarTodos(req: Request, res: Response) {
 
 export async function cadastrar(req: Request, res: Response) {
     const airbnb: Airbnb = (req.body);
-    const teste = criar(airbnb);
-    console.log(teste);
-    res.json(airbnb);
+    criar(airbnb);
+    res.send(airbnb);
 }

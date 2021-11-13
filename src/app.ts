@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(json());
 bd.connecting();
+
 app.set('port', process.env.PORT || 1234);
 if (process.env.NODE_ENV !== 'production') {
     app.use(morgan('dev'));

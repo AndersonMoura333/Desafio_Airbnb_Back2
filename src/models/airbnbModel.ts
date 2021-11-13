@@ -4,7 +4,7 @@ import { model, Schema, SchemaTypes } from 'mongoose';
 
 const AirbnbSchema = new Schema<Airbnb>({
     id: { type: String, required: true, unique: true },
-    name: { type: String, required: true },
+    nome: { type: String, required: true },
     sumario: { type: String, required: true },
     espaco: { type: String, required: true },
     descricao: { type: String, required: true },

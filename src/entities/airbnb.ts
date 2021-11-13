@@ -1,7 +1,7 @@
 
 export interface Airbnb {
     id: string;
-    name: string;
+    nome: string;
     sumario: string;
     espaco: string;
     descricao: string;
