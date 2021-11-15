@@ -6,7 +6,7 @@ export async function criar(airbnb: Airbnb) {
 }
 
 export async function buscarPorId(id: string) {
-    return AirbnbModel.where('id').equals(id);
+    return AirbnbModel.where('id').equals(id).exec();
 }
 
 export async function listar() {

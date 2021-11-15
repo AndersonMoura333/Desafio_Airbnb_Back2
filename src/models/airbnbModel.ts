@@ -1,6 +1,5 @@
 import { Airbnb } from '../entities/airbnb';
-import { Imagens } from '../entities/imagens'
-import { model, Schema, SchemaTypes } from 'mongoose';
+import { model, Schema } from 'mongoose';
 
 const AirbnbSchema = new Schema<Airbnb>({
     id: { type: String, required: true, unique: true },
