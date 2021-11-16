@@ -5,8 +5,9 @@ export async function criar(user: User) {
     return UserModel.create(user);
 }
 
-export async function autentificar(userName: String, userPassword: String) {
-    return UserModel.where('nome').equals(userName).where('senha').equals(userPassword).exec();
+export async function buscar(userName: String) {
+    const userAuth = await UserModel.where('nome').equals(userName).exec();
+    return userAuth[0];
 }
 
 
