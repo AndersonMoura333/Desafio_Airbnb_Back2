@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Airbnb } from '../entities/airbnb';
-import { criar, listar } from '../repositories/AirbnbRepository'
+import { criar, listar, buscarPorCidade } from '../repositories/AirbnbRepository'
 import { validationResult } from 'express-validator'
 
 
@@ -28,8 +28,23 @@ export async function cadastrar(req: Request, res: Response) {
     } else {
 
         res.status(200).json(airbnb);
-        console.log('criou');
         criar(airbnb);
     }
+
+}
+
+export async function buscar(req: Request, res: Response) {
+    const { cidade } = req.params;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        res.status(404).json({
+            message: errors.array()
+        });
+    } else {
+        const AirbnbPorCidadae = buscarPorCidade(cidade);
+        res.status(200).json(AirbnbPorCidadae);
+
+    }
+
 
 }

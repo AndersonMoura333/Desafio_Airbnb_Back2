@@ -7,8 +7,6 @@ import { sign } from 'jsonwebtoken'
 export async function signIn(req: Request, res: Response) {
     const { nome, senha } = req.body;
     const user = await buscar(nome);
-    console.log(user);
-    console.log(process.env.HASH_KEY);
     compare(senha, user!.senha).then(passwordDidMatch => {
         console.log(passwordDidMatch);
         if (passwordDidMatch) {
