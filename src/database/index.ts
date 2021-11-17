@@ -1,7 +1,7 @@
 import { connect } from 'mongoose';
 
 
-const uri = 'mongodb+srv://AdminAirbnb:123789@cluster0.vyak2.mongodb.net/Airbnb?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://AdminAirbnb:123789@cluster0.vyak2.mongodb.net/Airbnb?retryWrites=true&w=majority';
 
 export async function connecting() {
     try {
