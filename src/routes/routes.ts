@@ -38,7 +38,7 @@ router.post(`${pathReserva}/cadastrar`,
 
 router.post(`${pathUser}/cadastrar`,
     body('nome').notEmpty().isString().toLowerCase(),
-    body('email').notEmpty().isString().toLowerCase(),
+    body('email').notEmpty().isString().isEmail().toLowerCase(),
     body('senha').notEmpty().isString(),
     UserController.cadastrar);
 
