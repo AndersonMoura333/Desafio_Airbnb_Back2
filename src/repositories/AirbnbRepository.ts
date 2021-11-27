@@ -9,8 +9,9 @@ export async function buscarPorId(id: string) {
     return AirbnbModel.where('id').equals(id).exec();
 }
 
-export async function buscarPorCidade(cidade: string) {
-    return AirbnbModel.where('cidade').equals(cidade).exec();
+export async function buscarPorCidade(cidadeBuscada: string) {
+    // const airbnbPorCidade = await AirbnbModel.where('cidade').equals(cidade).exec();
+    return AirbnbModel.find({ cidade: cidadeBuscada }).exec();
 }
 
 export async function listar() {

@@ -11,8 +11,8 @@
     "dev": "nodemon src/index.ts",
     "start": "ts-node src/index.ts",
     "build": "tsc",
-    "start:tsnode": "ts-node src/index.ts",
-    "start:node": "npm run build && node dist/index.js"
+    "start:tsnode": "ts-node -r dotenv/config src/index.ts",
+    "start:node": "npm run build && node -r dotenv/config dist/index.js"
   },
   "keywords": [],
   "author": "",

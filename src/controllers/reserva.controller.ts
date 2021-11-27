@@ -6,7 +6,6 @@ import { validationResult } from 'express-validator'
 
 export async function listarTodos(req: Request, res: Response) {
     const airbnbs = await listar();
-    console.log(airbnbs);
     if (airbnbs.length > 0) {
         res.status(200).json(airbnbs);
     } else {
@@ -41,8 +40,8 @@ export async function buscar(req: Request, res: Response) {
             message: errors.array()
         });
     } else {
-        const AirbnbPorCidadae = buscarPorCidade(cidade);
-        res.status(200).json(AirbnbPorCidadae);
+        const AirbnbPorCidade = await buscarPorCidade(cidade.toLowerCase());
+        res.status(200).json(AirbnbPorCidade);
 
     }
 

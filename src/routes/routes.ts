@@ -46,4 +46,4 @@ router.post(`${pathAuth}/signIn`,
     body('nome').notEmpty().isString().toLowerCase(),
     body('senha').notEmpty().isString(), signIn);
 
-router.get(`${pathBuscar}/:cidade`, ReservaController.buscar);
+router.get(`${pathBuscar}/cidade/:cidade`, ReservaController.buscar);
