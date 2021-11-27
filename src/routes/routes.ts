@@ -33,7 +33,7 @@ router.post(`${pathReserva}/cadastrar`,
     body('numDeHospedes').notEmpty().isString(),
     body('numDeCamas').notEmpty().isString(),
     body('imagem').notEmpty().isString(),
-    authorizationMiddleware,
+    // authorizationMiddleware,
     ReservaController.cadastrar);
 
 router.post(`${pathUser}/cadastrar`,
