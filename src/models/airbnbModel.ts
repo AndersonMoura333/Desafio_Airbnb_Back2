@@ -8,7 +8,7 @@ const AirbnbSchema = new Schema<Airbnb>({
     sumario: { type: String, required: false },
     espaco: { type: String, required: false },
     descricao: { type: String, required: false },
-    nota: { type: String, required: true },
+    nota: { type: String, required: false },
     acesso: { type: String, required: false },
     regrasDaCasa: { type: String, required: true },
     tipoDePropriedade: { type: String, required: true },
