@@ -14,7 +14,7 @@ bd.connecting();
 dotenv.config();
 
 
-//app.set('port', process.env.PORT || 1234);
+app.set('port', process.env.PORT || 1234);
 if (process.env.NODE_ENV! !== 'production') {
     app.use(morgan('dev'));
     app.use(errorHandler());
