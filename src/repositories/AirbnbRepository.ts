@@ -14,6 +14,22 @@ export async function buscarPorCidade(cidadeBuscada: string) {
     return AirbnbModel.find({ cidade: cidadeBuscada }).exec();
 }
 
+
+export async function filtro(preco: string | undefined, tipoDePropriedadeBuscada: string | undefined) {
+    if (preco && tipoDePropriedadeBuscada) {
+        return AirbnbModel.find({ precoPorNoite: { $gte: preco }, tipoDePropriedade: tipoDePropriedadeBuscada }).exec();
+    }
+
+    else if (preco) {
+        return AirbnbModel.find({ precoPorNoite: { $gte: preco } }).exec();
+    }
+
+    else if (tipoDePropriedadeBuscada) {
+        return AirbnbModel.find({ tipoDePropriedade: tipoDePropriedadeBuscada }).exec();
+    }
+
+}
+
 export async function listar() {
     return AirbnbModel.find().exec();
 }
